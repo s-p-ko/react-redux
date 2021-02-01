@@ -163,10 +163,10 @@ const todoApp = Redux.combineReducers({
 
 const store = Redux.createStore(todoApp);
 const dispatch = (action) => {
-  store.dispatch(action);
   console.log('----------------') || displayInPreview('----------------');
-  console.log('current state:') || displayInPreview('current state:');
-  console.log(store.getState()) || displayInPreview(store.getState().visibilityFilter);
+  console.log('dispatching action:') || displayInPreview('dispatching action:');
+  console.log(action) || displayInPreview(action);
+  store.dispatch(action);
 }
 const render = () => {
   ReactDOM.render(
@@ -179,8 +179,6 @@ const render = () => {
 }
 render();
 store.subscribe(render);
-console.log('current state:') || displayInPreview('current state:');
-console.log(store.getState()) || displayInPreview(store.getState().visibilityFilter);
 
 // noprotect
 
